@@ -1,4 +1,43 @@
 body {
     margin:0;
-    padding:20rem;
+    padding:0rem;
+    font-family :Helvetica, sans-serif;
+}
+
+a {
+    color : #00abff;
+    text-decoration: none;
+}
+
+h1{
+    font-weight: normal !important;
+    border-bottom : 1px solid #bbb;
+    padding : 0 0 10px 0;
+}
+
+h2{
+    font-weight: normal !important;
+    margin: 30px 0 0;
+}
+
+#content {
+    float:left;
+    width: 60%;
+    padding: 0 0 0 30px;
+}
+
+#sidebar{
+    float : right;
+    width: 30%;
+    padding: 10px;
+    background: #efefef;
+    height: 100%;
+}
+
+
+p.date {
+    color: #ccc;
+    font-family : Georgia, serif;
+    font-size : 12px;
+    font-style: italic;
 }

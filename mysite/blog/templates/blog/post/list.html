@@ -14,7 +14,7 @@
     <p class="date">
         published: {{post.publish}} by {{ post.author}}
     </p>
-    {{post.body}}
+    {{post.body|truncatewords:30|linebreaks}}
 
  {% endfor %}
 
