@@ -16,7 +16,7 @@ def post_list(request):
     paginator = Paginator(post_list,3) # determine the number of posts to display on a page
     page_number = request.GET.get('page',1)#get the requested page number or default: 1 
     try:
-        posts = paginator.page(page_number)
+        posts = paginator.page(page_number) 
     except PageNotAnInteger:
         posts = paginator.page(1)
     except EmptyPage:
