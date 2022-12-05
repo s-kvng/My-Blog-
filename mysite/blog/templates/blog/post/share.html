@@ -1,0 +1,78 @@
+
+{% extends 'blog/base.html'%}
+
+{% block title %} Share a post{% endblock %}
+
+{% block content %}
+{% if sent %}
+<h1> E-mail successfully sent !! </h1>
+<p>
+    {{post.title}} was successfully sent to {{form.cleaned_data.to}}
+</p>
+{% else %}
+<h1 id="title"> Share "{{post.title}}" by email </h1>
+
+<form method="post">
+{% csrf_token %}
+     
+{% comment %} {{form.as_p}} {% endcomment %}
+
+{% for field in form%}
+
+<div class="forms">
+{{feild.error}}
+{{field.label_tag}} {{field}}
+</div>
+
+<style>
+.forms{
+    margin: 0 0 15px 0;
+
+}
+
+#title{
+    font-weight: 700 !important;
+}
+
+input{
+    padding: 5px 0;
+    border-top : none;
+    border-left : none;
+    border-right : none;
+    border-radius : 10px;
+    width: 70%;
+
+}
+
+form{
+    background-color: #ffe;
+    border : 1px solid gray ;
+    border-radius : 12px;
+    width: 50%;
+    padding: 15px;
+    margin: 20px;
+    {% comment %} justify-content: center; {% endcomment %}
+    align-items: center;
+    {% comment %} text-align: center; {% endcomment %}
+    
+
+}
+
+.btn{
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+}
+
+</style>
+
+{% endfor %}
+
+
+<div class="d-grid gap-2">
+    <input class="btn btn-primary" type="submit" value="send e-mail">
+  </div>
+</form>
+{% endif %}
+
+{% endblock %}
