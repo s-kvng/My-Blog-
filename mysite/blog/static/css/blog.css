@@ -47,3 +47,11 @@ p.date {
     margin: 40px 0;
     font-weight: bold;
 }
+
+.comment{
+    padding: 10px !important;
+}
+
+.comment:nth-child(even){
+    background: #00abff;
+}
