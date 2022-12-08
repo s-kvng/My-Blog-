@@ -1,0 +1,58 @@
+
+<h2 id="com_header">Add a New Comment</h2>
+
+<form class="com_form" action="{% url "blog:post_comment" post.id %}" method="post">
+{{ form.as_p}}
+{% csrf_token %}
+
+<div class="col-12">
+<input class="col" type="submit" value="Add comment">
+</div>
+
+</form>
+<style>
+
+    label { 
+        float:left;
+        clear:both;
+        color:#333;
+        margin-bottom:4px; 
+    }
+    input, textarea { 
+        clear:both;
+        float:left;
+        margin:0 0 10px;
+        background:#ededed;
+        border:0;
+        border-radius: 5px;
+        padding:6px 10px;
+        font-size:12px;
+        resize: none;
+        width: 50%;
+
+        
+    }
+
+    input[type="text"]{
+        width:40%;
+    }
+
+    input:focus{
+       
+        transition-duration: 0s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0.3s;
+
+    }
+
+</style>
+{% comment %} input{
+    padding: 5px 0;
+    border-top : none;
+    border-left : none;
+    border-right : none;
+    border-radius : 10px;
+    width: 70%;
+
+}
+</style> {% endcomment %}
