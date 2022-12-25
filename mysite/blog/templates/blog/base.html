@@ -21,6 +21,12 @@
         <h2>My blog</h2>
         <p>This is my blog</p>
          <p>I have written {% total_posts %} so far {% comment %} custom simple_tag to display the total number of post(post.published.count) {% endcomment %}
+
+        <p>
+            <a href="{% url "blog:post_feed" %}">
+                Subcribe to my RSS feed
+            </a>
+        </p>
         
  {% comment %} custom inclusion_tag to display the latest post {% endcomment %}
 
